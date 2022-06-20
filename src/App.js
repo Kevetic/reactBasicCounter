@@ -15,14 +15,17 @@ function App() {
     }
   }
   const clearCounter = () => {
-    setCounter(0)
+    setTimeout(() => {
+      setCounter(0)
+      alert('counter is now reset')
+    }, "5000")
   }
 
   return (
     <div className="App">
       <div className='header-container'>
         <button onClick={subtractCounter}>-</button>
-        <button onClick={clearCounter}>Clear</button>
+        <button onClick={clearCounter}>Clear(wait 5s)</button>
         <button onClick={addCounter}>+</button>
       </div> 
       <div className='counter-container'>
