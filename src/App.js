@@ -15,9 +15,12 @@ function App() {
     }
   }
   const clearCounter = () => {
-    setTimeout(() => {
       setCounter(0)
-      alert('counter is now reset')
+  }
+  const alertCounter = () => {
+    // console.log(counter)
+    setTimeout(() => {
+      alert('The current count is: ' + counter)
     }, "5000")
   }
 
@@ -25,11 +28,12 @@ function App() {
     <div className="App">
       <div className='header-container'>
         <button onClick={subtractCounter}>-</button>
-        <button onClick={clearCounter}>Clear(wait 5s)</button>
+        <button onClick={clearCounter}>Clear</button>
         <button onClick={addCounter}>+</button>
       </div> 
       <div className='counter-container'>
         <span>Counter: {counter}</span>
+        <button onClick={alertCounter}>Alert Current Count(wait 5s)</button>
       </div>
     </div>
   );
